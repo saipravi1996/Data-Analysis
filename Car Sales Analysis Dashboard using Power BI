@@ -1,0 +1,30 @@
+/* Car Sales Analysis Dashboard created using PowerBI */
+
+In this Dashboard, I have created 8 components in it.
+
+This Dashboard could help businesses track Car Sales Trend, Revenue Performance, Identify Key buying Trends, Demographics and Preferences.
+
+Components
+============
+1) Total Quantity of Cars Sold
+2) Average Sale Price of Cars
+3) Total Sales Amount 
+4) Sold Count of Auto Transmission cars and Manual Cars
+5) Monthly Trend of Quantity of Cars Sold  
+6) High number of Sales as per Region
+7) Highest amount of Sales as per Region
+
+Charts Used
+===========
+1) Line Chart
+2) Card
+3) Pie Chart
+
+Functions used
+==============
+1) Count
+2) Sum
+3) Percent of Total
+
+
+
