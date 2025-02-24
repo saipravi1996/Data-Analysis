@@ -257,10 +257,6 @@ on a.product_id = b.product_id) c
 inner join gold_users d on c.user_id = d.user_id where c.order_date < d.gold_signup_date 
 group by c.user_id;
 
-/*  Rank the transactions */
-
-Select *, Rank() over(order by b.price desc, order_date desc) as Ranking from orders a inner join products b on
-a.product_id = b.product_id;
 
 /* Trend of the order count */
 
