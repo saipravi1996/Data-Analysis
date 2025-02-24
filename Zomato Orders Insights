@@ -1,0 +1,271 @@
+create schema zomato_analysis;
+use zomato_analysis;
+create table users(user_id int, signup_date date);
+create table products(product_id int, product_name text, price int);
+create table orders(order_id int, order_date date, user_id int, product_id int);
+create table gold_users(user_id int, gold_signup_date date);
+
+Select * from users;
+Select * from products;
+Select * from orders;
+Select * from gold_users;
+
+insert into users values 
+(10315, '2022-06-29'),
+(10375, '2022-06-29'),
+(10480, '2020-10-04'),
+(10645, '2019-03-31'),
+(10015, '2019-03-31'),
+(10060, '2021-03-03'),
+(10105, '2021-03-03'),
+(10150, '2021-03-03'),
+(10165, '2021-03-03'),
+(10255, '2019-09-15'),
+(10600, '2019-09-15'),
+(10420, '2021-07-10'),
+(10450, '2020-02-03'),
+(10615, '2020-02-03'),
+(10660, '2019-04-21'),
+(10180, '2020-05-08'),
+(10870, '2021-11-14'),
+(10885, '2021-11-14'),
+(10270, '2021-11-14'),
+(10300, '2019-10-24'),
+(10330, '2020-11-13'),
+(10390, '2022-12-11'),
+(10495, '2022-12-11'),
+(10525, '2022-12-11'),
+(10675, '2022-09-07'),
+(10765, '2022-09-07'),
+(10900, '2022-04-15'),
+(10030, '2019-05-04'),
+(10075, '2021-07-17'),
+(10120, '2021-07-17'),
+(10195, '2021-07-17'),
+(10210, '2021-07-17'),
+(10465, '2021-07-17'),
+(10585, '2021-08-26'),
+(10690, '2021-08-26'),
+(10855, '2021-08-26'),
+(10780, '2021-08-26'),
+(10795, '2021-08-26'),
+(10945, '2019-06-22'),
+(10960, '2019-06-22'),
+(10360, '2019-06-22'),
+(10705, '2021-07-04'),
+(10810, '2021-07-04'),
+(10720, '2021-07-04'),
+(10915, '2021-07-04'),
+(10345, '2021-09-04'),
+(10405, '2021-09-04'),
+(10510, '2021-09-04'),
+(10540, '2021-09-04');
+
+truncate table products;
+
+insert into products values
+(10000576, 'Fried_rice', 150),
+(10004654, 'Burger', 120),
+(10001590, 'Veg_Bhiryani', 220),
+(10004390, 'Pulao', 180),
+(10002765, 'Dosa', 110),
+(10000151, 'Idli', 95),
+(10001332, 'Poori', 75),
+(10000895, 'Chapati', 80),
+(10002857, 'Parota', 90),
+(10000349, 'Pongal', 60);
+
+
+insert into orders values
+(1, '2022-06-29', 10315, 10000576),
+(2, '2022-06-29', 10375, 10004654),
+(3, '2020-10-04', 10480, 10001590),
+(4, '2019-03-31', 10645, 10004390),
+(5, '2019-03-31', 10015, 10002765),
+(6, '2021-03-03', 10060, 10000151),
+(7, '2021-03-03', 10105, 10001332),
+(8, '2021-03-03', 10150, 10000895),
+(9, '2021-03-03', 10165, 10002857),
+(10, '2019-09-15', 10255, 10000349),
+(11, '2019-09-15', 10600, 10000576),
+(12, '2021-07-10', 10420, 10004654),
+(13, '2020-02-03', 10450, 10001590),
+(14, '2020-02-03', 10615, 10004390),
+(15, '2019-04-21', 10660, 10002765),
+(16, '2020-05-08', 10180, 10000151),
+(17, '2021-11-14', 10870, 10001332),
+(18, '2021-11-14', 10885, 10000895),
+(19, '2021-11-14', 10270, 10002857),
+(20, '2019-10-24', 10300, 10000349),
+(21, '2020-11-13', 10330, 10002857),
+(22, '2022-12-11', 10390, 10000349),
+(23, '2022-12-11', 10495, 10000576),
+(24, '2022-12-11', 10525, 10004654),
+(25, '2022-09-07', 10675, 10001590),
+(26, '2022-09-07', 10765, 10004390),
+(27, '2022-04-15', 10900, 10002765),
+(28, '2019-05-04', 10030, 10000151),
+(29, '2021-07-17', 10075, 10001332),
+(30, '2021-07-17', 10120, 10000895),
+(31, '2021-07-17', 10195, 10002857),
+(32, '2021-07-17', 10210, 10000349),
+(33, '2021-07-17', 10465, 10000349),
+(34, '2021-08-26', 10585, 10000576),
+(35, '2021-08-26', 10690, 10004654),
+(36, '2021-08-26', 10855, 10001590),
+(37, '2021-08-26', 10780, 10004390),
+(38, '2021-08-26', 10795, 10002765),
+(39, '2019-06-22', 10945, 10000151),
+(40, '2019-06-22', 10960, 10001332),
+(41, '2019-06-22', 10360, 10000895),
+(42, '2021-07-04', 10705, 10002857),
+(43, '2021-07-04', 10810, 10000349),
+(44, '2021-07-04', 10720, 10000349),
+(45, '2021-07-04', 10915, 10000576),
+(46, '2021-09-04', 10345, 10004654),
+(47, '2021-09-04', 10405, 10001590),
+(48, '2021-09-04', 10510, 10004390),
+(49, '2021-09-04', 10540, 10002765),
+(50, '2022-08-29', 10315, 10000151),
+(51, '2022-08-29', 10375, 10001332),
+(52, '2020-12-04', 10480, 10000895),
+(53, '2019-05-31', 10645, 10002857),
+(54, '2019-05-31', 10015, 10000349),
+(55, '2021-05-03', 10060, 10000349),
+(56, '2021-05-03', 10105, 10000576),
+(57, '2021-05-03', 10150, 10004654),
+(58, '2021-05-03', 10165, 10001590),
+(59, '2019-11-15', 10255, 10004390),
+(60, '2019-11-15', 10600, 10002765),
+(61, '2021-09-10', 10420, 10000151),
+(62, '2020-04-03', 10450, 10001332),
+(63, '2020-04-03', 10615, 10000895),
+(64, '2019-06-21', 10660, 10002857),
+(65, '2020-07-08', 10180, 10000349),
+(66, '2022-01-14', 10870, 10002857),
+(67, '2022-01-14', 10885, 10000349),
+(68, '2022-01-14', 10270, 10000895),
+(69, '2019-12-24', 10300, 10002857),
+(70, '2021-01-13', 10330, 10000349),
+(71, '2023-02-11', 10390, 10000151),
+(72, '2023-02-11', 10495, 10001332),
+(73, '2023-02-11', 10525, 10000895),
+(74, '2022-11-07', 10675, 10002857),
+(75, '2022-11-07', 10765, 10000349),
+(76, '2022-06-15', 10900, 10000576),
+(77, '2019-07-04', 10030, 10004654),
+(78, '2021-09-17', 10075, 10001590),
+(79, '2021-09-17', 10120, 10004390),
+(80, '2021-09-17', 10195, 10002765),
+(81, '2021-09-17', 10210, 10000151),
+(82, '2021-09-17', 10465, 10001332),
+(83, '2021-10-26', 10585, 10000895),
+(84, '2021-10-26', 10690, 10002857),
+(85, '2021-10-26', 10855, 10000349),
+(86, '2021-10-26', 10780, 10002857),
+(87, '2021-10-26', 10795, 10000349),
+(88, '2019-08-22', 10945, 10000576),
+(89, '2019-08-22', 10960, 10004654),
+(90, '2019-08-22', 10360, 10001590),
+(91, '2021-09-04', 10705, 10004390),
+(92, '2021-09-04', 10810, 10002765),
+(93, '2021-09-04', 10720, 10000151),
+(94, '2021-09-04', 10915, 10001332),
+(95, '2021-11-04', 10345, 10000895),
+(96, '2021-11-04', 10405, 10002857),
+(97, '2021-11-04', 10510, 10000349),
+(98, '2021-11-04', 10540, 10000895),
+(99, '2021-09-04', 10510, 10002857);
+
+
+insert into gold_users values
+(10315, '2022-07-29'),
+(10375, '2022-07-29'),
+(10480, '2020-11-04'),
+(10645, '2019-04-30'),
+(10015, '2019-04-30'),
+(10060, '2021-04-03'),
+(10105, '2021-04-03'),
+(10150, '2021-04-03'),
+(10165, '2021-04-03'),
+(10255, '2019-10-15'),
+(10600, '2019-10-15'),
+(10420, '2021-08-10'),
+(10450, '2020-03-03');
+
+/* Total Amount spent by each customer */
+
+Select a.user_id, sum(b.price) as Total_Amount_Spent from orders a inner join products b
+on a.product_id = b.product_id group by a.user_id;
+
+/* How many orders by each customer */
+
+Select user_id, count(order_id) as no_of_orders from orders group by user_id;
+
+/* Products which has high sales amount in order of descending */
+
+Select b.product_name, sum(b.price) as Total_Sales from orders a inner join products b on 
+a.product_id = b.product_id group by b.product_name order by sum(b.price) desc;
+
+/* First Product purchased by each customer */
+
+Select user_id, product_id from(
+
+Select user_id, product_id, order_date, 
+rank() over(partition by user_id order by order_date) as rank_num
+from orders) as order_detail 
+where rank_num=1;
+
+/* Most purchased product on the menu and how many times it has been purchased */
+
+Select product_id, count(product_id)
+from orders group by product_id order by count(product_id) desc limit 1;
+
+/* Most purchased product on the menu for each customer */
+
+Select user_id, product_id from (
+Select user_id, product_id, count(product_id), row_number() 
+over (partition by user_id order by count(product_id) desc) as row_num
+from orders group by user_id, product_id) a
+where row_num=1;
+
+/* Which item was customer purchased first after becoming gold member */
+Select user_id, product_id from 
+(
+Select a.user_id, a.product_id, a.order_date,b.gold_signup_date, 
+row_number() over(partition by a.user_id order by a.order_date) as row_num
+from orders a inner join gold_users b on
+a.user_id = b.user_id where a.order_date > b.gold_signup_date) c
+where row_num = 1;
+
+
+/* Which item was customer purchased first just before becoming gold member */
+Select user_id, product_id from 
+(
+Select a.user_id, a.product_id, a.order_date,b.gold_signup_date, 
+row_number() over(partition by a.user_id order by a.order_date desc) as row_num
+from orders a inner join gold_users b on
+a.user_id = b.user_id where a.order_date < b.gold_signup_date) c
+where row_num=1;
+
+/* What are the order count and amount spent for each member before becoming member*/
+
+Select c.user_id, count(c.product_id), sum(c.price) from (
+Select a.user_id, a.product_id, a.order_date, b.price, 
+rank() over (partition by user_id order by order_date) rank_num from orders a inner join products b 
+on a.product_id = b.product_id) c
+inner join gold_users d on c.user_id = d.user_id where c.order_date < d.gold_signup_date 
+group by c.user_id;
+
+/*  Rank the transactions */
+
+Select *, Rank() over(order by b.price desc, order_date desc) as Ranking from orders a inner join products b on
+a.product_id = b.product_id;
+
+/* Trend of the order count */
+
+Select order_date, count(order_id) from orders group by order_date order by order_date;
+
+
+
+
